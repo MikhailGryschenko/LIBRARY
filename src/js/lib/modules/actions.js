@@ -69,11 +69,18 @@ $.prototype.find = function(selector) {
 
 $.prototype.closest = function(selector) {
     let counter = 0;
-
+    let length = this.length;
     for (let i = 0; i < this.length; i++) {
-        this[i] = this[i].closest(selector);
-        counter++;
+        if (this[i].closest(selector)) {
+            this[i] = this[i].closest(selector);
+            counter++;
+            continue;
+        } else {
+            console.log(`This parent Class ${selector} is not found for used child Class`);
+            length--;
+        }
     }
+    this.length = length;
 
     const objLength = Object.keys(this).length;
 
