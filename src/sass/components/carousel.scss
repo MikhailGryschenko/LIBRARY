@@ -50,4 +50,30 @@
             object-fit: cover;
         }
     }
+    &-prev, &-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        color: #fff;
+        opacity: .5;
+        text-align: center;
+        font-size: 40px;
+        transition: opacity .15s ease;
+        text-decoration: none;
+        &:hover {
+            opacity: .9;
+            color: rgba(0,0,0, .2);
+        }
+    }
+    &-prev {
+        left: 0;
+    }
+    &-next {
+        right: 0;
+    }
 }
